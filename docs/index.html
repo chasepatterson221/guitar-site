@@ -66,13 +66,6 @@
   .peg.learned { background: var(--teal); border-color: var(--teal); }
   .progress-text { margin: 0; color: var(--muted); font-size: 0.95rem; }
 
-  .notice {
-    margin: 0 0 1.5rem;
-    padding: 0.75rem 1rem;
-    border-left: 4px solid var(--pick);
-    background: var(--wash);
-  }
-
   /* Track list */
   .tracks {
     list-style: none;
@@ -174,8 +167,6 @@
     <p class="progress-text" id="progress-text"></p>
   </div>
 
-  <p class="notice" id="notice" hidden>Couldn't load the recordings just now. Refresh in a minute.</p>
-
   <ol class="tracks" id="tracks"></ol>
 
   <footer>Recordings are phone voice memos, played as recorded.</footer>
@@ -184,40 +175,40 @@
 
 <script>
 /* ============================================================
-   HOW RECORDINGS GET ON THIS PAGE
+   EDIT THIS LIST. It is the only part of the site you change.
 
-   Upload an audio file to the docs/audio folder on GitHub, named:
+   status: "not-started", "learning", or "learned"
 
-       NN_YYYY-MM-DD_short-note.m4a
-
-   Example:  02_2026-09-29_first-run-through.m4a
-     02          = the song's track number (see the list below)
-     2026-09-29  = the date you recorded it
-     first-run-through = the note shown next to the date (optional)
-
-   The page finds new files by itself. The only thing you ever edit
-   here is a song's status: "not-started", "learning", or "learned".
+   To add a recording:
+     1. Put the audio file in the audio/ folder.
+     2. Add a line like this inside that song's clips list:
+        { file: "audio/2026-09-29-why-why-why.m4a", date: "2026-09-29", note: "First run-through" },
    ============================================================ */
-const REPO = "chasepatterson221/guitar-site";
-const AUDIO_DIR = "docs/audio";
-
 const SONGS = [
-  { track: 1,  title: "Who I Am",            seconds: 100, bpm: 87,  status: "not-started", clips: [] },
-  { track: 2,  title: "Why Why Why",         seconds: 169, bpm: 105, status: "not-started", clips: [] },
-  { track: 3,  title: "That's the Dream",    seconds: 134, bpm: 96,  status: "not-started", clips: [] },
-  { track: 4,  title: "Nobody Knows",        seconds: 152, bpm: 81,  status: "not-started", clips: [] },
-  { track: 5,  title: "Isn't That Enough",   seconds: 165, bpm: 120, status: "not-started", clips: [] },
-  { track: 6,  title: "Heart of Gold",       seconds: 172, bpm: 135, status: "not-started", clips: [] },
-  { track: 7,  title: "Heavy",               seconds: 154, bpm: 136, status: "not-started", clips: [] },
-  { track: 8,  title: "That'll Be the Day",  seconds: 112, bpm: 129, status: "not-started", clips: [] },
-  { track: 9,  title: "In Between",          seconds: 117, bpm: 151, status: "not-started", clips: [] },
-  { track: 10, title: "The Mountain",        seconds: 176, bpm: 92,  status: "not-started", clips: [] },
-  { track: 11, title: "Rollin' Right Along", seconds: 159, bpm: 94,  status: "not-started", clips: [] }
+  { track: 1,  title: "Who I Am",            seconds: 100, bpm: 87,  status: "not-started", clips: [
+  ] },
+  { track: 2,  title: "Why Why Why",         seconds: 169, bpm: 105, status: "not-started", clips: [
+  ] },
+  { track: 3,  title: "That's the Dream",    seconds: 134, bpm: 96,  status: "not-started", clips: [
+  ] },
+  { track: 4,  title: "Nobody Knows",        seconds: 152, bpm: 81,  status: "not-started", clips: [
+  ] },
+  { track: 5,  title: "Isn't That Enough",   seconds: 165, bpm: 120, status: "not-started", clips: [
+  ] },
+  { track: 6,  title: "Heart of Gold",       seconds: 172, bpm: 135, status: "not-started", clips: [
+  ] },
+  { track: 7,  title: "Heavy",               seconds: 154, bpm: 136, status: "not-started", clips: [
+  ] },
+  { track: 8,  title: "That'll Be the Day",  seconds: 112, bpm: 129, status: "not-started", clips: [
+  ] },
+  { track: 9,  title: "In Between",          seconds: 117, bpm: 151, status: "not-started", clips: [
+  ] },
+  { track: 10, title: "The Mountain",        seconds: 176, bpm: 92,  status: "not-started", clips: [
+  ] },
+  { track: 11, title: "Rollin' Right Along", seconds: 159, bpm: 94,  status: "not-started", clips: [
+  ] }
 ];
 /* ============================================================ */
-
-const AUDIO_EXT = /\.(m4a|mp3|wav|aac|ogg)$/i;
-const NAME_PATTERN = /^(\d{1,2})_(\d{4}-\d{2}-\d{2})(?:_(.*))?\.[A-Za-z0-9]+$/;
 
 const STATUS_LABEL = {
   "not-started": "Not started",
@@ -241,33 +232,6 @@ function prettyDate(iso) {
   const d = new Date(iso + "T12:00:00Z");
   if (isNaN(d)) return esc(iso);
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
-}
-
-// Turns "02_2026-09-29_first-run.m4a" into { track, date, note, file }.
-function parseClip(name) {
-  if (!AUDIO_EXT.test(name)) return null;
-  const m = NAME_PATTERN.exec(name);
-  if (!m) return null;
-  const note = (m[3] || "").replace(/[-_]+/g, " ").trim();
-  return {
-    track: Number(m[1]),
-    date: m[2],
-    note: note ? note.charAt(0).toUpperCase() + note.slice(1) : "",
-    file: "audio/" + encodeURIComponent(name)
-  };
-}
-
-// Asks GitHub which files are in docs/audio. No folder yet means no recordings yet.
-async function loadClips() {
-  const url = "https://api.github.com/repos/" + REPO + "/contents/" + AUDIO_DIR;
-  const res = await fetch(url, { headers: { Accept: "application/vnd.github+json" } });
-  if (res.status === 404) return [];
-  if (!res.ok) throw new Error("GitHub returned " + res.status);
-  const files = await res.json();
-  return files
-    .filter(function (f) { return f.type === "file"; })
-    .map(function (f) { return parseClip(f.name); })
-    .filter(Boolean);
 }
 
 function renderClips(song) {
@@ -315,24 +279,8 @@ function renderProgress() {
     learned + " learned, " + learning + " in progress, " + notStarted + " not started";
 }
 
-async function start() {
-  try {
-    const clips = await loadClips();
-    clips.sort(function (a, b) {
-      return b.date.localeCompare(a.date) || a.file.localeCompare(b.file);
-    });
-    clips.forEach(function (c) {
-      const song = SONGS.find(function (s) { return s.track === c.track; });
-      if (song) song.clips.push(c);
-    });
-  } catch (err) {
-    document.getElementById("notice").hidden = false;
-  }
-  document.getElementById("tracks").innerHTML = SONGS.map(renderTrack).join("");
-  renderProgress();
-}
-
-start();
+document.getElementById("tracks").innerHTML = SONGS.map(renderTrack).join("");
+renderProgress();
 
 // Only one recording plays at a time.
 document.addEventListener("play", function (e) {
