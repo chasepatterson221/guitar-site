@@ -6,6 +6,6 @@ Practice recordings as I learn 11 songs from Shawn Mendes' album *Shawn* on guit
 
 ## Adding a recording
 
-1. Put the audio file in `docs/audio/`.
-2. Add one line to that song's `clips` list in `docs/index.html`.
-3. Commit and push. The site updates in about a minute.
+1. On GitHub, open the `docs/audio` folder, then choose **Add file, Upload files**.
+2. Upload an audio file named `NN_YYYY-MM-DD_short-note.m4a`, for example `02_2026-09-29_first-run-through.m4a` (NN is the track number).
+3. Commit. The page picks it up on its own after GitHub republishes, about a minute.

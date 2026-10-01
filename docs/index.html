@@ -1,210 +1,346 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    body {background-color: #f9f5ef}
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.2px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.5px 'Helvetica Neue'; color: #77674e; -webkit-text-stroke: #77674e}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #2e2418; -webkit-text-stroke: #2e2418; min-height: 18.0px}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.0px 'Helvetica Neue'; color: #b66830; -webkit-text-stroke: #b66830}
-    p.p6 {margin: 0.0px 0.0px 21.0px 0.0px; font: 16.0px 'Helvetica Neue'; color: #77674e; -webkit-text-stroke: #77674e}
-    p.p7 {margin: 0.0px 0.0px 30.0px 0.0px; font: 12.6px 'Helvetica Neue'; color: #77674e; -webkit-text-stroke: #77674e}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.5px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #b66830}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.5px 'Helvetica Neue'; color: #2e2418; -webkit-text-stroke: #2e2418}
-    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12}
-    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.6px 'Helvetica Neue'; color: #77674e; -webkit-text-stroke: #77674e}
-    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; font: 8.4px 'Helvetica Neue'; color: #b66830; -webkit-text-stroke: #b66830}
-    p.p13 {margin: 0.0px 0.0px 15.0px 0.0px; font: 12.2px 'Helvetica Neue'; color: #77674e; -webkit-text-stroke: #77674e}
-    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.6px 'Helvetica Neue'; color: #785c37; -webkit-text-stroke: #785c37; background-color: #f2e0c9}
-    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.6px 'Helvetica Neue'; color: #31685c; -webkit-text-stroke: #31685c; background-color: #cbe9e5}
-    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.5px 'Helvetica Neue'; color: #b66830; -webkit-text-stroke: #b66830}
-    p.p18 {margin: 0.0px 0.0px 0.0px 0.0px; font: 21.0px '.Apple Color Emoji UI'; color: #2e2418; -webkit-text-stroke: #2e2418}
-    p.p20 {margin: 0.0px 0.0px 18.0px 0.0px; font: 10.8px 'Helvetica Neue'; color: #77674e; -webkit-text-stroke: #77674e}
-    p.p21 {margin: 0.0px 0.0px 0.0px 0.0px; font: 8.6px 'Helvetica Neue'; color: #77674e; -webkit-text-stroke: #77674e; background-color: #e2d9c5}
-    p.p22 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.6px 'Helvetica Neue'; color: #b66830; -webkit-text-stroke: #b66830; min-height: 11.0px}
-    p.p23 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.6px 'Helvetica Neue'; color: #b66830; -webkit-text-stroke: #b66830}
-    p.p24 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.6px 'Helvetica Neue'; color: #b66830; -webkit-text-stroke: #b66830; background-color: #fffbf5}
-    p.p25 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.8px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12}
-    p.p26 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.8px 'Helvetica Neue'; color: #77674e; -webkit-text-stroke: #77674e}
-    p.p27 {margin: 0.0px 0.0px 0.0px 0.0px; font: 8.4px 'Helvetica Neue'; color: #bdab88; -webkit-text-stroke: #bdab88}
-    p.p29 {margin: 0.0px 0.0px 18.0px 0.0px; font: 24.0px 'Helvetica Neue'; color: #e2d9c5; -webkit-text-stroke: #e2d9c5}
-    p.p30 {margin: 0.0px 0.0px 30.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #77674e; -webkit-text-stroke: #77674e}
-    p.p31 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.5px 'Helvetica Neue'; color: #f9f5ef; -webkit-text-stroke: #f9f5ef; min-height: 12.0px}
-    p.p32 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.5px 'Helvetica Neue'; color: #f9f5ef; -webkit-text-stroke: #f9f5ef}
-    p.p33 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.6px 'Helvetica Neue'; color: #bdab88; -webkit-text-stroke: #bdab88}
-    li.li2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.5px 'Helvetica Neue'; color: #77674e; -webkit-text-stroke: #77674e}
-    span.s1 {font-kerning: none; background-color: rgba(249, 245, 239, 0.88)}
-    span.s2 {background-color: rgba(249, 245, 239, 0.88); -webkit-text-stroke: 0px #000000}
-    span.s3 {font-kerning: none}
-    span.s4 {font-kerning: none; color: #b66830; -webkit-text-stroke: 0px #b66830}
-    span.s5 {font-kerning: none; background-color: #fffbf5}
-    span.s6 {font-kerning: none; color: #b66830; background-color: #fffbf5; -webkit-text-stroke: 0px #b66830}
-    span.s7 {font-kerning: none; color: #2e2418; background-color: #fffbf5; -webkit-text-stroke: 0px #2e2418}
-    span.s8 {font-kerning: none; background-color: #f9f5ef}
-    span.s9 {font-kerning: none; color: #2e2418; background-color: #f9f5ef; -webkit-text-stroke: 0px #2e2418}
-    span.s10 {font: 10.5px 'Helvetica Neue'; font-kerning: none; color: #b66830; -webkit-text-stroke: 0px #b66830}
-    span.s11 {font-kerning: none; color: #b66830; background-color: #f9f5ef; -webkit-text-stroke: 0px #b66830}
-    span.s12 {font: 9.6px 'Helvetica Neue'; font-kerning: none}
-    span.s13 {font: 9.6px 'Helvetica Neue'; font-kerning: none; color: #b66830; -webkit-text-stroke: 0px #b66830}
-    span.s14 {font-kerning: none; background-color: #211b12}
-    span.s15 {font-kerning: none; color: #f9f5ef; background-color: #211b12; -webkit-text-stroke: 0px #f9f5ef}
-    span.s16 {font: 10.5px 'Helvetica Neue'; font-kerning: none; color: #f9f5ef; -webkit-text-stroke: 0px #f9f5ef}
-    span.s17 {font-kerning: none; color: #77674e; background-color: #211b12; -webkit-text-stroke: 0px #77674e}
-    span.s18 {font-kerning: none; color: #bdab88; -webkit-text-stroke: 0px #bdab88}
-    ul.ul1 {list-style-type: none}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learning Shawn</title>
+<meta name="description" content="Learning 11 songs from Shawn Mendes' album Shawn on guitar. Press play to hear each one.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Karla:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F1F3EF;
+    --ink: #16262C;
+    --muted: #5C6A6E;
+    --line: #D3D9D4;
+    --wash: #E6EBE7;
+    --teal: #1F5C73;
+    --pick: #E9B824;
+    --display: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --body: "Karla", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 1.0625rem/1.55 var(--body);
+  }
+
+  .wrap {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.25rem 4rem;
+  }
+
+  h1 {
+    font: 700 clamp(2.4rem, 7vw, 3.6rem)/1.02 var(--display);
+    letter-spacing: -0.02em;
+    margin: 0 0 1rem;
+  }
+
+  .intro { max-width: 34rem; margin: 0 0 2rem; }
+
+  /* One dot per song, filled by status */
+  .progress { margin: 0 0 2.5rem; }
+  .pegs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.75rem;
+  }
+  .peg {
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    border: 2px solid var(--ink);
+    background: transparent;
+  }
+  .peg.learning { background: var(--pick); }
+  .peg.learned { background: var(--teal); border-color: var(--teal); }
+  .progress-text { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+  .notice {
+    margin: 0 0 1.5rem;
+    padding: 0.75rem 1rem;
+    border-left: 4px solid var(--pick);
+    background: var(--wash);
+  }
+
+  /* Track list */
+  .tracks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 2px solid var(--ink);
+  }
+  .track { border-bottom: 1px solid var(--line); }
+
+  .track summary {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr auto 1rem;
+    gap: 0.25rem 1rem;
+    align-items: center;
+    padding: 1rem 0.25rem;
+    cursor: pointer;
+    list-style: none;
+  }
+  .track summary::-webkit-details-marker { display: none; }
+  .track summary:hover { background: var(--wash); }
+  .track summary:focus-visible { outline: 3px solid var(--teal); outline-offset: -3px; }
+
+  .num {
+    font: 600 1.5rem/1 var(--display);
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .title { font: 600 1.25rem/1.2 var(--display); }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.9rem;
+    margin-top: 0.15rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    border: 2px solid var(--ink);
+  }
+  .status.learning .dot { background: var(--pick); }
+  .status.learned .dot { background: var(--teal); border-color: var(--teal); }
+
+  .chev {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-right: 2px solid var(--muted);
+    border-bottom: 2px solid var(--muted);
+    transform: rotate(45deg);
+    transition: transform 0.15s;
+  }
+  .track[open] .chev { transform: rotate(-135deg); }
+
+  /* Recordings */
+  .clips, .empty { padding: 0 0.25rem 1.25rem 3.5rem; margin: 0; }
+  .clips { list-style: none; }
+  .empty { color: var(--muted); }
+  .clip { margin: 0 0 1.1rem; }
+  .clip:last-child { margin-bottom: 0; }
+  .clip-head { display: flex; flex-wrap: wrap; gap: 0.1rem 0.75rem; margin-bottom: 0.35rem; }
+  .clip-date { font-weight: 700; }
+  .clip-note { color: var(--muted); }
+  audio { display: block; width: 100%; }
+
+  footer { margin-top: 2rem; color: var(--muted); font-size: 0.9rem; }
+
+  @media (max-width: 34rem) {
+    .track summary { grid-template-columns: 2rem 1fr 1rem; }
+    .status { grid-column: 2; grid-row: 2; }
+    .chev { grid-column: 3; grid-row: 1; }
+    .clips, .empty { padding-left: 0.25rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .chev { transition: none; }
+  }
+</style>
 </head>
 <body>
-<p class="p1"><span class="s1">Your Name</span></p>
-<ul class="ul1">
-  <li class="li2"><span class="s2"></span><span class="s1">ABOUT</span></li>
-  <li class="li2"><span class="s2"></span><span class="s1">PROJECTS</span></li>
-  <li class="li2"><span class="s2"></span><span class="s1">EXPERIENCE</span></li>
-  <li class="li2"><span class="s2"></span><span class="s1">CONTACT</span></li>
-</ul>
-<p class="p3"><span class="s3"></span><br></p>
-<p class="p3"><span class="s3"></span><br></p>
-<p class="p3"><span class="s3"></span><br></p>
-<p class="p4"><span class="s3">DATA SCIENTIST &amp; AI/ML ENGINEER</span></p>
-<h1 style="margin: 0.0px 0.0px 6.0px 0.0px; font: 48.0px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12"><span class="s3">Hi, I'm </span><span class="s4">Chase.</span></h1>
-<p class="p6"><span class="s3">I turn raw data into meaningful decisions.</span></p>
-<p class="p7"><span class="s3">I build machine learning systems and data pipelines that help people and organizations understand their world better — one model at a time.</span></p>
-<p class="p8"><span class="s3">View my work</span></p>
-<p class="p9"><span class="s3">Get in touch</span></p>
-<p class="p10"><span class="s3">5+</span></p>
-<p class="p11"><span class="s3">PROJECTS SHIPPED</span></p>
-<p class="p10"><span class="s3">3</span></p>
-<p class="p11"><span class="s3">YEARS EXPERIENCE</span></p>
-<p class="p10"><span class="s3">∞</span></p>
-<p class="p11"><span class="s3">CURIOSITY</span></p>
-<p class="p12"><span class="s5">ABOUT</span></p>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12"><span class="s5">A bit about </span><span class="s6">me</span></h2>
-<p class="p13"><span class="s5">I'm a </span><span class="s7">Data Scientist and AI/ML Engineer</span><span class="s5"> passionate about solving real-world problems through data. Whether it's building a predictive model from scratch or designing a pipeline that scales, I love the whole journey — from messy raw data to clean, actionable insights.</span></p>
-<p class="p13"><span class="s5">My background spans </span><span class="s7">machine learning, natural language processing, and data engineering</span><span class="s5">. I care deeply about making models that are not just accurate, but interpretable and fair.</span></p>
-<p class="p13"><span class="s5">When I'm not training models, you'll find me reading about cognitive science, hiking, or experimenting with new recipes. I believe the best data scientists are curious about everything — not just their datasets.</span></p>
-<p class="p14"><span class="s3">Python</span></p>
-<p class="p14"><span class="s3">PyTorch</span></p>
-<p class="p14"><span class="s3">TensorFlow</span></p>
-<p class="p14"><span class="s3">Scikit-learn</span></p>
-<p class="p14"><span class="s3">Pandas / NumPy</span></p>
-<p class="p15"><span class="s3">SQL</span></p>
-<p class="p15"><span class="s3">Spark</span></p>
-<p class="p15"><span class="s3">dbt</span></p>
-<p class="p14"><span class="s3">Hugging Face</span></p>
-<p class="p14"><span class="s3">LangChain</span></p>
-<p class="p15"><span class="s3">AWS / GCP</span></p>
-<p class="p15"><span class="s3">Docker</span></p>
-<h4 style="margin: 0.0px 0.0px 9.0px 0.0px; font: 10.8px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12"><span class="s8">Education</span></h4>
-<p class="p2"><span class="s9">B.S. Computer Science</span><span class="s3"><br>
-</span><span class="s8">Your University, 2022</span></p>
-<h4 style="margin: 0.0px 0.0px 9.0px 0.0px; font: 10.8px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12"><span class="s8">Currently reading</span></h4>
-<p class="p2"><span class="s8">The Art of Statistics — David Spiegelhalter</span></p>
-<h4 style="margin: 0.0px 0.0px 9.0px 0.0px; font: 10.8px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12"><span class="s8">Open to</span></h4>
-<p class="p2"><span class="s8">Full-time roles in Data Science, ML Engineering, and Applied AI. Also happy to chat about freelance or research collaborations.</span></p>
-<h4 style="margin: 0.0px 0.0px 9.0px 0.0px; font: 10.8px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12"><span class="s8">Resume</span></h4>
-<p class="p17"><span class="s8"><a href="file:///Users/chasepatterson/Downloads/your-resume.pdf">Download PDF ↗<span class="s10"></span></a></span></p>
-<p class="p12"><span class="s8">WORK</span></p>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12"><span class="s8">Selected </span><span class="s11">projects</span></h2>
-<p class="p18"><span class="s5">🧠</span></p>
-<p class="p12"><span class="s5">NLP · SENTIMENT ANALYSIS</span></p>
-<h3 style="margin: 0.0px 0.0px 9.0px 0.0px; font: 14.4px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12"><span class="s5">Customer Sentiment Engine</span></h3>
-<p class="p20"><span class="s5">Fine-tuned a BERT-based model on 50k+ customer reviews to classify sentiment and extract key themes. Reduced manual review tagging by 80% for a retail client.</span></p>
-<p class="p21"><span class="s3">Python</span></p>
-<p class="p21"><span class="s3">HuggingFace</span></p>
-<p class="p21"><span class="s3">PyTorch</span></p>
-<p class="p21"><span class="s3">FastAPI</span></p>
-<p class="p22"><span class="s3"><a href="https://github.com/yourusername/project"></a></span><br></p>
-<p class="p23"><span class="s5"><a href="https://github.com/yourusername/project">GitHub<span class="s12"></span></a></span></p>
-<p class="p22"><span class="s3"></span><br></p>
-<p class="p24"><span class="s3">Live Demo</span></p>
-<p class="p18"><span class="s5">📈</span></p>
-<p class="p12"><span class="s5">FORECASTING · TIME SERIES</span></p>
-<h3 style="margin: 0.0px 0.0px 9.0px 0.0px; font: 14.4px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12"><span class="s5">Sales Demand Forecasting</span></h3>
-<p class="p20"><span class="s5">Built an LSTM + XGBoost ensemble to forecast product demand across 200 SKUs. Achieved 12% MAPE improvement over the existing baseline statistical model.</span></p>
-<p class="p21"><span class="s3">Python</span></p>
-<p class="p21"><span class="s3">TensorFlow</span></p>
-<p class="p21"><span class="s3">XGBoost</span></p>
-<p class="p21"><span class="s3">Plotly</span></p>
-<p class="p22"><span class="s3"><a href="https://github.com/yourusername/project2"></a></span><br></p>
-<p class="p23"><span class="s5"><a href="https://github.com/yourusername/project2">GitHub<span class="s12"></span></a></span></p>
-<p class="p22"><span class="s3"></span><br></p>
-<p class="p24"><span class="s3">Write-up</span></p>
-<p class="p18"><span class="s5">🔍</span></p>
-<p class="p12"><span class="s5">RAG · LLMS</span></p>
-<h3 style="margin: 0.0px 0.0px 9.0px 0.0px; font: 14.4px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12"><span class="s5">Document Q&amp;A Assistant</span></h3>
-<p class="p20"><span class="s5">Retrieval-augmented generation system that lets users query a library of internal PDFs in plain English. Built with LangChain, OpenAI embeddings, and Pinecone vector DB.</span></p>
-<p class="p21"><span class="s3">LangChain</span></p>
-<p class="p21"><span class="s3">OpenAI</span></p>
-<p class="p21"><span class="s3">Pinecone</span></p>
-<p class="p21"><span class="s3">Streamlit</span></p>
-<p class="p22"><span class="s3"><a href="https://github.com/yourusername/project3"></a></span><br></p>
-<p class="p23"><span class="s5"><a href="https://github.com/yourusername/project3">GitHub<span class="s12"></span></a></span></p>
-<p class="p22"><span class="s3"></span><br></p>
-<p class="p24"><span class="s3">Live Demo</span></p>
-<p class="p18"><span class="s5">🌿</span></p>
-<p class="p12"><span class="s5">COMPUTER VISION · CLASSIFICATION</span></p>
-<h3 style="margin: 0.0px 0.0px 9.0px 0.0px; font: 14.4px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12"><span class="s5">Plant Disease Detector</span></h3>
-<p class="p20"><span class="s5">CNN trained on 87k images to identify 38 plant diseases from leaf photos. Deployed as a mobile-friendly web app — farmers can snap a photo and get a diagnosis instantly.</span></p>
-<p class="p21"><span class="s3">PyTorch</span></p>
-<p class="p21"><span class="s3">ResNet-50</span></p>
-<p class="p21"><span class="s3">OpenCV</span></p>
-<p class="p21"><span class="s3">Flask</span></p>
-<p class="p22"><span class="s3"><a href="https://github.com/yourusername/project4"></a></span><br></p>
-<p class="p23"><span class="s5"><a href="https://github.com/yourusername/project4">GitHub<span class="s12"></span></a></span></p>
-<p class="p22"><span class="s3"></span><br></p>
-<p class="p24"><span class="s3">Write-up</span></p>
-<p class="p18"><span class="s5">⚡</span></p>
-<p class="p12"><span class="s5">DATA ENGINEERING · PIPELINE</span></p>
-<h3 style="margin: 0.0px 0.0px 9.0px 0.0px; font: 14.4px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12"><span class="s5">Real-Time Analytics Pipeline</span></h3>
-<p class="p20"><span class="s5">End-to-end streaming pipeline ingesting 500k+ events/day from Kafka into a data warehouse via Spark Structured Streaming and dbt transformations. Sub-5s latency.</span></p>
-<p class="p21"><span class="s3">Kafka</span></p>
-<p class="p21"><span class="s3">Spark</span></p>
-<p class="p21"><span class="s3">dbt</span></p>
-<p class="p21"><span class="s3">Snowflake</span></p>
-<p class="p22"><span class="s3"><a href="https://github.com/yourusername/project5"></a></span><br></p>
-<p class="p24"><span class="s3"><a href="https://github.com/yourusername/project5">GitHub<span class="s13"></span></a></span></p>
-<p class="p18"><span class="s5">💬</span></p>
-<p class="p12"><span class="s5">GENERATIVE AI · CHATBOT</span></p>
-<h3 style="margin: 0.0px 0.0px 9.0px 0.0px; font: 14.4px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12"><span class="s5">Personalized Study Tutor</span></h3>
-<p class="p20"><span class="s5">LLM-powered study assistant that adapts explanations to a student's knowledge level. Tracks session history and surfaces weak areas. Used by 200+ students during beta.</span></p>
-<p class="p21"><span class="s3">OpenAI API</span></p>
-<p class="p21"><span class="s3">LangChain</span></p>
-<p class="p21"><span class="s3">React</span></p>
-<p class="p21"><span class="s3">Supabase</span></p>
-<p class="p22"><span class="s3"><a href="https://github.com/yourusername/project6"></a></span><br></p>
-<p class="p23"><span class="s5"><a href="https://github.com/yourusername/project6">GitHub<span class="s12"></span></a></span></p>
-<p class="p22"><span class="s3"></span><br></p>
-<p class="p24"><span class="s3">Live Demo</span></p>
-<p class="p12"><span class="s5">JOURNEY</span></p>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Helvetica Neue'; color: #211b12; -webkit-text-stroke: #211b12"><span class="s5">Where I've </span><span class="s6">worked</span></h2>
-<p class="p4"><span class="s5">2023 – PRESENT</span></p>
-<p class="p25"><span class="s5">Data Scientist</span></p>
-<p class="p26"><span class="s5">Your Current Company</span></p>
-<p class="p26"><span class="s5">Built and deployed ML models improving customer churn prediction by 23%. Led migration of legacy ETL pipelines to a modern dbt + Airflow stack.</span></p>
-<p class="p4"><span class="s5">2022 – 2023</span></p>
-<p class="p25"><span class="s5">ML Engineer Intern</span></p>
-<p class="p26"><span class="s5">Previous Company</span></p>
-<p class="p26"><span class="s5">Developed NLP features for a content recommendation engine. Ran A/B tests and delivered weekly experiment read-outs to cross-functional stakeholders.</span></p>
-<p class="p4"><span class="s5">2021 – 2022</span></p>
-<p class="p25"><span class="s5">Data Analyst Intern</span></p>
-<p class="p26"><span class="s5">Another Company</span></p>
-<p class="p26"><span class="s5">Built dashboards and automated reporting in Python + Tableau. Introduced statistical significance testing to the team's experiment evaluation process.</span></p>
-<p class="p27"><span class="s14">CONTACT</span></p>
-<h2 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Helvetica Neue'; color: #b66830; -webkit-text-stroke: #b66830"><span class="s15">Let's </span><span class="s14">connect</span></h2>
-<p class="p29"><span class="s14">"The best way to predict the future is to create it — with good data."</span></p>
-<p class="p30"><span class="s14">Whether you have a role in mind, a project idea, or just want to talk data — my inbox is always open.</span></p>
-<p class="p31"><span class="s3"><a href="mailto:you@email.com"></a></span><br></p>
-<p class="p32"><span class="s14"><a href="mailto:you@email.com">Email me<span class="s16"></span></a></span></p>
-<p class="p31"><span class="s3"><a href="https://linkedin.com/in/yourprofile"></a></span><br></p>
-<p class="p32"><span class="s14"><a href="https://linkedin.com/in/yourprofile">LinkedIn<span class="s16"></span></a></span></p>
-<p class="p31"><span class="s3"><a href="https://github.com/yourusername"></a></span><br></p>
-<p class="p32"><span class="s14"><a href="https://github.com/yourusername">GitHub<span class="s16"></span></a></span></p>
-<p class="p11"><span class="s14">© 2025 Your Name. Built with care.</span></p>
-<p class="p33"><span class="s17">Deployed on <a href="https://pages.cloudflare.com/"><span class="s18">Cloudflare Pages</span></a></span></p>
+<main class="wrap">
+  <h1>Learning Shawn</h1>
+  <p class="intro">
+    I'm teaching myself guitar by learning 11 songs from Shawn Mendes' 2024 album <i>Shawn</i>.
+    Open a song and press play to hear where it's at.
+  </p>
+
+  <div class="progress">
+    <ul class="pegs" id="pegs" aria-hidden="true"></ul>
+    <p class="progress-text" id="progress-text"></p>
+  </div>
+
+  <p class="notice" id="notice" hidden>Couldn't load the recordings just now. Refresh in a minute.</p>
+
+  <ol class="tracks" id="tracks"></ol>
+
+  <footer>Recordings are phone voice memos, played as recorded.</footer>
+  <noscript><p>This page needs JavaScript to show the song list.</p></noscript>
+</main>
+
+<script>
+/* ============================================================
+   HOW RECORDINGS GET ON THIS PAGE
+
+   Upload an audio file to the docs/audio folder on GitHub, named:
+
+       NN_YYYY-MM-DD_short-note.m4a
+
+   Example:  02_2026-09-29_first-run-through.m4a
+     02          = the song's track number (see the list below)
+     2026-09-29  = the date you recorded it
+     first-run-through = the note shown next to the date (optional)
+
+   The page finds new files by itself. The only thing you ever edit
+   here is a song's status: "not-started", "learning", or "learned".
+   ============================================================ */
+const REPO = "chasepatterson221/guitar-site";
+const AUDIO_DIR = "docs/audio";
+
+const SONGS = [
+  { track: 1,  title: "Who I Am",            seconds: 100, bpm: 87,  status: "not-started", clips: [] },
+  { track: 2,  title: "Why Why Why",         seconds: 169, bpm: 105, status: "not-started", clips: [] },
+  { track: 3,  title: "That's the Dream",    seconds: 134, bpm: 96,  status: "not-started", clips: [] },
+  { track: 4,  title: "Nobody Knows",        seconds: 152, bpm: 81,  status: "not-started", clips: [] },
+  { track: 5,  title: "Isn't That Enough",   seconds: 165, bpm: 120, status: "not-started", clips: [] },
+  { track: 6,  title: "Heart of Gold",       seconds: 172, bpm: 135, status: "not-started", clips: [] },
+  { track: 7,  title: "Heavy",               seconds: 154, bpm: 136, status: "not-started", clips: [] },
+  { track: 8,  title: "That'll Be the Day",  seconds: 112, bpm: 129, status: "not-started", clips: [] },
+  { track: 9,  title: "In Between",          seconds: 117, bpm: 151, status: "not-started", clips: [] },
+  { track: 10, title: "The Mountain",        seconds: 176, bpm: 92,  status: "not-started", clips: [] },
+  { track: 11, title: "Rollin' Right Along", seconds: 159, bpm: 94,  status: "not-started", clips: [] }
+];
+/* ============================================================ */
+
+const AUDIO_EXT = /\.(m4a|mp3|wav|aac|ogg)$/i;
+const NAME_PATTERN = /^(\d{1,2})_(\d{4}-\d{2}-\d{2})(?:_(.*))?\.[A-Za-z0-9]+$/;
+
+const STATUS_LABEL = {
+  "not-started": "Not started",
+  "learning": "Learning",
+  "learned": "Learned"
+};
+
+function esc(text) {
+  return String(text).replace(/[&<>"']/g, function (c) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+  });
+}
+
+function mmss(total) {
+  const m = Math.floor(total / 60);
+  const s = String(total % 60).padStart(2, "0");
+  return m + ":" + s;
+}
+
+function prettyDate(iso) {
+  const d = new Date(iso + "T12:00:00Z");
+  if (isNaN(d)) return esc(iso);
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+}
+
+// Turns "02_2026-09-29_first-run.m4a" into { track, date, note, file }.
+function parseClip(name) {
+  if (!AUDIO_EXT.test(name)) return null;
+  const m = NAME_PATTERN.exec(name);
+  if (!m) return null;
+  const note = (m[3] || "").replace(/[-_]+/g, " ").trim();
+  return {
+    track: Number(m[1]),
+    date: m[2],
+    note: note ? note.charAt(0).toUpperCase() + note.slice(1) : "",
+    file: "audio/" + encodeURIComponent(name)
+  };
+}
+
+// Asks GitHub which files are in docs/audio. No folder yet means no recordings yet.
+async function loadClips() {
+  const url = "https://api.github.com/repos/" + REPO + "/contents/" + AUDIO_DIR;
+  const res = await fetch(url, { headers: { Accept: "application/vnd.github+json" } });
+  if (res.status === 404) return [];
+  if (!res.ok) throw new Error("GitHub returned " + res.status);
+  const files = await res.json();
+  return files
+    .filter(function (f) { return f.type === "file"; })
+    .map(function (f) { return parseClip(f.name); })
+    .filter(Boolean);
+}
+
+function renderClips(song) {
+  if (!song.clips.length) {
+    return '<p class="empty">No recordings yet.</p>';
+  }
+  const items = song.clips.map(function (c) {
+    return '<li class="clip">' +
+      '<div class="clip-head">' +
+        '<span class="clip-date">' + prettyDate(c.date) + '</span>' +
+        (c.note ? '<span class="clip-note">' + esc(c.note) + '</span>' : '') +
+      '</div>' +
+      '<audio controls preload="none" src="' + esc(c.file) + '"></audio>' +
+    '</li>';
+  }).join("");
+  return '<ul class="clips">' + items + '</ul>';
+}
+
+function renderTrack(song) {
+  const count = song.clips.length;
+  const countText = count ? '<span>' + count + (count === 1 ? ' recording' : ' recordings') + '</span>' : '';
+  return '<li><details class="track">' +
+    '<summary>' +
+      '<span class="num">' + song.track + '</span>' +
+      '<span>' +
+        '<span class="title">' + esc(song.title) + '</span>' +
+        '<span class="meta"><span>' + mmss(song.seconds) + '</span><span>' + song.bpm + ' BPM</span>' + countText + '</span>' +
+      '</span>' +
+      '<span class="status ' + song.status + '"><span class="dot"></span>' + STATUS_LABEL[song.status] + '</span>' +
+      '<span class="chev" aria-hidden="true"></span>' +
+    '</summary>' +
+    renderClips(song) +
+  '</details></li>';
+}
+
+function renderProgress() {
+  document.getElementById("pegs").innerHTML = SONGS.map(function (s) {
+    return '<li class="peg ' + s.status + '"></li>';
+  }).join("");
+
+  const learned = SONGS.filter(function (s) { return s.status === "learned"; }).length;
+  const learning = SONGS.filter(function (s) { return s.status === "learning"; }).length;
+  const notStarted = SONGS.length - learned - learning;
+  document.getElementById("progress-text").textContent =
+    learned + " learned, " + learning + " in progress, " + notStarted + " not started";
+}
+
+async function start() {
+  try {
+    const clips = await loadClips();
+    clips.sort(function (a, b) {
+      return b.date.localeCompare(a.date) || a.file.localeCompare(b.file);
+    });
+    clips.forEach(function (c) {
+      const song = SONGS.find(function (s) { return s.track === c.track; });
+      if (song) song.clips.push(c);
+    });
+  } catch (err) {
+    document.getElementById("notice").hidden = false;
+  }
+  document.getElementById("tracks").innerHTML = SONGS.map(renderTrack).join("");
+  renderProgress();
+}
+
+start();
+
+// Only one recording plays at a time.
+document.addEventListener("play", function (e) {
+  if (e.target.tagName !== "AUDIO") return;
+  document.querySelectorAll("audio").forEach(function (a) {
+    if (a !== e.target) a.pause();
+  });
+}, true);
+</script>
 </body>
 </html>
