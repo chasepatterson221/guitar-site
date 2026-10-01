@@ -102,12 +102,13 @@
     letter-spacing: -0.012em;
   }
 
-  /* The italic "Shawn" in the intro: flowing gold and green with a soft passing glint. */
+  /* "Shawn" in the big title: flowing gold and green with a soft passing glint.
+     Sizes are in em so the wave scales with the title at any screen width. */
   .shine {
     display: inline-block;
-    padding: 0 0.1em;
-    margin: 0 -0.05em;
-    font-weight: 700;
+    font-style: italic;
+    padding: 0 0.14em 0 0.08em;
+    margin: 0 -0.1em 0 -0.04em;
     color: #B8921C;
   }
   @supports ((-webkit-background-clip: text) or (background-clip: text)) {
@@ -117,12 +118,12 @@
       background-image:
         linear-gradient(105deg, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0) 62%),
         linear-gradient(100deg, #14683A 0%, #2E9B5B 17%, #B8921C 38%, #E2BE45 50%, #B8921C 62%, #2E9B5B 83%, #14683A 100%);
-      background-size: 200% 100%, 260px 100%;
+      background-size: 200% 100%, 4.5em 100%;
       background-repeat: no-repeat, repeat-x;
       background-position: 140% 0, 0 0;
       -webkit-background-clip: text;
       background-clip: text;
-      filter: drop-shadow(0 0 0.5px rgba(184, 146, 28, 0.45));
+      filter: drop-shadow(0 0 1px rgba(184, 146, 28, 0.45));
       animation: goldflow 7s linear infinite;
     }
   }
@@ -534,10 +535,11 @@
     from { opacity: 0; transform: translateY(18px); }
     to   { opacity: 1; transform: none; }
   }
+  /* The color wave moves exactly one 4.5em repeat per loop, so it never jumps. */
   @keyframes goldflow {
     0%   { background-position: 140% 0, 0 0; }
-    55%  { background-position: -40% 0, 143px 0; }
-    100% { background-position: -40% 0, 260px 0; }
+    55%  { background-position: -40% 0, 2.475em 0; }
+    100% { background-position: -40% 0, 4.5em 0; }
   }
   @keyframes eq {
     0%, 100% { height: 25%; }
@@ -572,9 +574,9 @@
     <div class="cover-fallback" aria-hidden="true">Shawn</div>
   </div>
 
-  <h1 class="rise" style="--d:0.1s">Learning Shawn</h1>
+  <h1 class="rise" style="--d:0.1s">Learning <span class="shine">Shawn</span></h1>
   <p class="sub rise" style="--d:0.2s">
-    I'm learning Shawn Mendes' 2024 album <i class="shine">Shawn</i>.
+    I'm learning Shawn Mendes' 2024 album <i>Shawn</i>.
     Open a song and press play to hear where I'm at.
   </p>
 
