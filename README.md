@@ -2,7 +2,7 @@
 
 Practice recordings as I learn 11 songs from Shawn Mendes' album *Shawn* on guitar.
 
-**Listen here:** https://YOUR-USERNAME.github.io/guitar-site/
+**Listen here:** https://chasepatterson221.github.io/guitar-site/
 
 ## Adding a recording
 
