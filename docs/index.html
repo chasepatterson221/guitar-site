@@ -259,7 +259,7 @@
   .tracks { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
   .item { border-bottom: 1px solid var(--line-soft); scroll-margin-top: 1.5rem; }
 
-  /* The whole row opens the song. The "Hear the original" link sits above that. */
+  /* The whole row opens the song. The "Hear Full Song" link sits above that. */
   .row {
     position: relative;
     display: grid;
@@ -607,7 +607,7 @@
   <p class="empty-filter" id="empty-filter" hidden>No songs here yet.</p>
 
   <footer>
-    Recordings are phone voice memos, played as recorded. "Hear the original" opens YouTube in a new tab.
+    Recordings are phone voice memos, played as recorded. "Hear Full Song" opens YouTube in a new tab.
     Cover art: <i>Shawn</i> (2024), Island Records.
   </footer>
   <noscript><p>This page needs JavaScript to show the song list.</p></noscript>
@@ -667,7 +667,7 @@ const SONGS = [
   { track: 11, title: "Rollin' Right Along", seconds: 159, bpm: 94,  status: "not-started", clips: [] }
 ];
 /* ============================================================
-   "HEAR THE ORIGINAL" LINKS
+   "Hear Full Song" LINKS
 
    Paste each song's YouTube address between the quotes. Any kind of
    YouTube link works, even one with extra stuff on the end such as
@@ -834,8 +834,8 @@ function renderTrack(song) {
   const countText = count ? '<span>' + count + (count === 1 ? ' recording' : ' recordings') + '</span>' : '';
   const link = '<a class="orig" href="' + esc(originalUrl(song)) + '" target="_blank" rel="noopener noreferrer"' +
     ' title="Opens YouTube in a new tab"' +
-    ' aria-label="Hear the original of ' + esc(song.title) + ' on YouTube (opens in a new tab)">' +
-    ICON_LISTEN + 'Hear the original</a>';
+    ' aria-label="Hear Full Song of ' + esc(song.title) + ' on YouTube (opens in a new tab)">' +
+    ICON_LISTEN + 'Hear Full Song</a>';
   return '<li class="item" id="song-' + n + '" data-status="' + song.status + '" data-title="' + esc(song.title) + '">' +
     '<div class="row">' +
       '<span class="num">' + n + '</span>' +
