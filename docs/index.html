@@ -102,6 +102,30 @@
     letter-spacing: -0.012em;
   }
 
+  /* The italic "Shawn" in the intro: flowing gold and green with a soft passing glint. */
+  .shine {
+    display: inline-block;
+    padding: 0 0.1em;
+    margin: 0 -0.05em;
+    font-weight: 700;
+    color: #B8921C;
+  }
+  @supports ((-webkit-background-clip: text) or (background-clip: text)) {
+    .shine {
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      background-image:
+        linear-gradient(105deg, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0) 62%),
+        linear-gradient(100deg, #14683A 0%, #2E9B5B 17%, #B8921C 38%, #E2BE45 50%, #B8921C 62%, #2E9B5B 83%, #14683A 100%);
+      background-size: 200% 100%, 260px 100%;
+      background-repeat: no-repeat, repeat-x;
+      background-position: 140% 0, 0 0;
+      -webkit-background-clip: text;
+      background-clip: text;
+      filter: drop-shadow(0 0 0.5px rgba(184, 146, 28, 0.45));
+      animation: goldflow 7s linear infinite;
+    }
+  }
   .cta {
     display: flex;
     flex-wrap: wrap;
@@ -510,6 +534,11 @@
     from { opacity: 0; transform: translateY(18px); }
     to   { opacity: 1; transform: none; }
   }
+  @keyframes goldflow {
+    0%   { background-position: 140% 0, 0 0; }
+    55%  { background-position: -40% 0, 143px 0; }
+    100% { background-position: -40% 0, 260px 0; }
+  }
   @keyframes eq {
     0%, 100% { height: 25%; }
     50%      { height: 100%; }
@@ -530,6 +559,7 @@
     .rise { animation: none; }
     .cover, .chev, .seg-btn, .play, .now-btn, .pill, .panel-wrap, .now { transition: none; }
     .eq i { animation: none; height: 70%; }
+    .shine { animation: none; }
   }
 </style>
 </head>
@@ -544,8 +574,8 @@
 
   <h1 class="rise" style="--d:0.1s">Learning Shawn</h1>
   <p class="sub rise" style="--d:0.2s">
-    I'm learning Shawn Mendes' 2024 album <i>Shawn</i> original songs.
-    Open a song and press play to hear where I'm currently at.
+    I'm learning Shawn Mendes' 2024 album <i class="shine">Shawn</i>.
+    Open a song and press play to hear where I'm at.
   </p>
 
   <div class="cta rise" style="--d:0.3s">
@@ -648,17 +678,17 @@ const SONGS = [
    A song with empty quotes opens a YouTube search for it instead.
    ============================================================ */
 const ORIGINALS = {
-  1:  "https://www.youtube.com/watch?v=RdWoAhkhKP8",   // Who I Am
-  2:  "https://www.youtube.com/watch?v=0M1UCYRZAtM&list=RD0M1UCYRZAtM&start_radio=1",   // Why Why Why
-  3:  "https://www.youtube.com/watch?v=zj73on_4TuU&list=OLAK5uy_m4ncaw1lbywIJpGvazBrIfWe6UOo3iK9o&index=3",   // That's the Dream
-  4:  "https://www.youtube.com/watch?v=gLCM_T37Sbc&list=OLAK5uy_m4ncaw1lbywIJpGvazBrIfWe6UOo3iK9o&index=4",   // Nobody Knows
-  5:  "https://www.youtube.com/watch?v=zGDDXAFw6L8&list=OLAK5uy_m4ncaw1lbywIJpGvazBrIfWe6UOo3iK9o&index=5",   // Isn't That Enough
-  6:  "https://www.youtube.com/watch?v=r7__5jmJ-tA&list=OLAK5uy_m4ncaw1lbywIJpGvazBrIfWe6UOo3iK9o&index=6",   // Heart of Gold
-  7:  "https://www.youtube.com/watch?v=M3jR_ej_Kvw&list=OLAK5uy_m4ncaw1lbywIJpGvazBrIfWe6UOo3iK9o&index=7",   // Heavy
-  8:  "https://www.youtube.com/watch?v=eaL0oBOliuE&list=OLAK5uy_m4ncaw1lbywIJpGvazBrIfWe6UOo3iK9o&index=8",   // That'll Be the Day
-  9:  "https://www.youtube.com/watch?v=F7Ud3mjZDLg&list=OLAK5uy_m4ncaw1lbywIJpGvazBrIfWe6UOo3iK9o&index=9",   // In Between
-  10: "https://www.youtube.com/watch?v=6fMmXHsxvZk&list=OLAK5uy_m4ncaw1lbywIJpGvazBrIfWe6UOo3iK9o&index=10",   // The Mountain
-  11: "https://www.youtube.com/watch?v=FZoRlh35ODM&list=OLAK5uy_m4ncaw1lbywIJpGvazBrIfWe6UOo3iK9o&index=11"    // Rollin' Right Along
+  1:  "",   // Who I Am
+  2:  "",   // Why Why Why
+  3:  "",   // That's the Dream
+  4:  "",   // Nobody Knows
+  5:  "",   // Isn't That Enough
+  6:  "",   // Heart of Gold
+  7:  "",   // Heavy
+  8:  "",   // That'll Be the Day
+  9:  "",   // In Between
+  10: "",   // The Mountain
+  11: ""    // Rollin' Right Along
 };
 /* ============================================================ */
 
