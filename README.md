@@ -18,8 +18,6 @@
 
 I'm learning 11 songs from *Shawn* on guitar, and this site is where I keep the recordings. Open a song, press play, and hear where it's at. Each song has a status, so you can see at a glance what's finished and what's still a work in progress.
 
-> [!TIP]
-> **[Open the live site](https://chasepatterson221.github.io/guitar-site/)** to hear the recordings. This page is just the behind-the-scenes notes.
 
 ## What's on the site
 
